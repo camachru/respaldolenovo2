@@ -1,0 +1,11 @@
+<div class="caj1 col-12 col-lg-12 col-xl-2 mb-3 mb-lg-0 mt-lg-3 mt-xl-2 me-lg-3">
+					<form>
+						<input class="form-control form-control-dark rounded-pill" autocomplete="off"
+							placeholder="Buscador" aria-label="Search" id="inputSearch">
+
+					</form>
+
+					<div class="caj2">
+						<i class="fas fa-search" id="imgbtsch"> </i>
+					</div>
+				</div>
