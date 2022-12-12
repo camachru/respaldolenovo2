@@ -1,0 +1,354 @@
+menu de navegacion
+https://www.youtube.com/watch?v=TbaQ42y8moc
+TUTORIAL Bootstrap 5: barras de navegación y menus desplegables
+Como hacer una barra de búsqueda con efecto hover con html y css - Facil
+
+
+usuarios
+CURSO DJANGO 2020 PARTE 15 - AUTORIZACIÓN
+restframwork
+1.- Curso Django REST | INTRODUCCIÓN A DJANGO REST FRAMEWORK
+https://www.youtube.com/watch?v=MMFBD2Eoeuk&list=PLMbRqrU_kvbRI4PgSzgbh8XPEwC1RNj8F
+apis rest
+consumir una api
+https://www.youtube.com/watch?v=1KKS0g-Wp7c
+
+https://www.youtube.com/watch?v=XqRBb_4CLS4
+https://www.bing.com/videos/search?q=api+rest+python+django&docid=608044640961695371&mid=04A208DB9280BDACD05A04A208DB9280BDACD05A&view=detail&FORM=VIRE
+
+pagina para login
+https://learndjango.com/tutorials/django-login-and-logout-tutorial
+
+nombre de app tiendarayos1
+
+
+deploy a herocku
+
+https://www.youtube.com/watch?v=r6RQqyUspkc
+Como subir un projecto Django a Heroku.
+
+
+
+
+link proyecto
+
+https://rayotienda99.herokuapp.com/
+
+pasword herocku
+
+camru2002@
+
+pasword github
+camachr77a
+
+
+
+
+pasword administrador
+Ususario camachr77
+Email camachr9@yahoo.com.mx
+Pasword camachr77a
+
+Curso Django. BBDD IV. PostgreSql. Vídeo 14
+CONTRASEÑA camrub77
+
+from django import forms
+import django_filters
+
+
+class ProductFilter(django_filters.FilterSet):
+    color = django_filters.ModelMultipleChoiceFilter(queryset=Color.objects.all(), widget=forms.CheckboxSelectMultiple())
+    
+    class Meta:
+        model = Product
+        fields = ['color']  # Add any other fields you want to filter to the list
+________________________________________________________________________________________________________
+FavoriteGames.objects.filter(user_id=id_user).values_list(game_id, flat=True) obtendrá todo game_ids 
+
+
+https://stackoverflow.com/questions/45754179/how-to-filter-object-in-django-models
+self.fields['category'].queryset = models.Category.objects.filter(user=user)
+
+listas
+https://datapeaker.com/big-data/ruta-de-aprendizaje-de-pnl-ruta-de-aprendizaje-para-dominar-la-pnl-en-2020/
+
+class FileAddHashedView(FormView):
+    """This view hashes the file contents using md5"""
+	
+	# myapp/views.py
+from django.views.generic import DetailView
+
+class MyView(DetailView):
+    template_name = 'detail.html'
+    model = MyModel
+    # additional parameters
+    slug = None
+
+    def get_object(self, queryset=None):
+        return queryset.get(slug=self.slug)
+
+
+	
+    form_class = FileUploadForm
+    success_url = reverse_lazy('vault-show')
+    template_name = "vault/add.html"
+    filebox_random= 0
+
+    def get_success_url(self):
+        return reverse('vault-show', kwargs={'random': self.filebox_random})
+
+    def form_valid(self, form):
+
+        instance = form.save(commit=False)
+
+        #generate a random number
+        rng = random.SystemRandom()
+        #TODO: must catch exception here
+        instance.random=rng.randint(0, sys.maxint)
+
+        instance.save()
+        #TODO: check what is the proper way to generate the parametric URL
+        self.filebox_random=instance.random
+        messages.success(
+            self.request, 'File hashed and uploaded!', fail_silently=True)
+
+        return super(FileAddHashedView, self).form_valid(form)
+
+
+    def form_invalid(self, form, **kwargs):
+        messages.error(self.request, 'Upload failed ...', fail_silently=True)
+        return super(FileAddView, self).form_invalid(form)
+
+
+
+def create(request):
+    form = ProductForm()
+    if request.method == "POST":
+        #print(request.POST['title'])
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            print("Valido")
+            #form.save()
+            product = Product()
+            product.title = form.cleaned_data['title']
+            product.price = form.cleaned_data['price']
+            product.description = form.cleaned_data['description']
+            product.category = form.cleaned_data['category']
+            product.save()
+        else:
+            print("Invalido")
+    return render(request, 'create.html', { 'form' : form })
+
+
+
+
+
+Hay alguna manera de obtener request.session desde dentro de una vista basada en clases?Obtener request.session desde una vista genérica basada en clase
+
+Por ejemplo, he
+
+from django.views.generic.edit import FormView 
+
+class CreateProfileView(FormView): 
+    def form_valid(self, form): 
+     # --> would like to save form contents to session here 
+
+     return redirect(self.get_success_url()) 
+Lo único que se me ocurre sería anular as_view añadiendo
+
+def as_view(self, request, *args, **kwargs): 
+    self.session = request.session 
+    super(CreateProfileView, self).as_view(request, *args, **kwargs) 
+a la clase. Pero eso parece feo. ¿Hay otra manera?
+
+Fuente
+
+
+Extraño PostgreSQL "valor demasiado largo para el carácter de tipo variable
+https://stackoverflow.com/questions/13485030/strange-postgresql-value-too-long-for-type-character-varying500
+
+Celia Arriaga
+
+Enviar correo
+
+
+5584350968
+__________________________________________________________________________________________
+
+pasar satod a una session
+request.session['winner_id'] = my_winner_id
+y
+
+winner_id = request.session['winner_id']
+Share
+
+50. Curso Django 2 | Funciones en Vistas Basadas en Clases
+
+# template 
+<form method="GET" action="">
+      <input type="text"  name="search_text" placeholder="Search post" value="{{ request.GET.search_text }}">
+if form.is_valid():
+            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
+            book_inst.due_back = form.cleaned_data['renewal_date']
+            book_inst.save()
+
+            # redirect to a new URL:
+            return HttpResponseRedirect(reverse('all-borrowed') )
+
+
+
+https://foroayuda.es/django-formulario-de-busqueda-en-listview-basado-en-clases/
+class ProfileList(ListView):
+    model = Profile
+    form_class = ProfileSearchForm
+    context_object_name = 'profiles'
+    template_name = 'pages/profile/list_profiles.html'
+    profiles = []
+
+
+    def get_queryset(self):
+        form = self.form_class(self.request.GET)
+        if form.is_valid():
+            return Profile.objects.filter(name__icontains=form.cleaned_data['name'])
+        return Profile.objects.all()
+
+
+
+     
+
+ <input type="submit" value="Search">
+</form>
+
+
+# view
+class SearchResultsView(generic.ListView):
+    """ Generic class-based view listing search results of locations """
+    model = Hashtag
+    template_name = 'mapping_twitter/results.html'
+
+    def get_queryset(self, **kwargs):
+
+        # ISSUE: restrict the search_text displayed on results.html to the 'search_text' entered by the user
+        qs = Hashtag.objects.all()
+
+        form_input = self.request.GET.get('search_text')
+
+        if form_input:
+            qs = qs.filter(search_text__iexact=form_input)
+
+        return qs
+https://stackoverflow.com/questions/50999199/set-form-input-as-variable-in-get-queryset
+
+class HashtagSearch(FormView):
+    """ FormView for user to enter hashtag search query """
+
+    template_name = 'mapping_twitter/hashtag_search_form.html'
+    form_class = SearchHashtagForm
+
+    def get_success_url(self):
+        return '{}?search_text={}'.format(reverse('mapping_twitter:results'),  self.request.POST.get('search_text'))
+
+
+from django import forms
+from .models import Category
+class ProductsForm(forms.Form):
+    title = forms.CharField(label="Nombre", required=True, max_length=255, min_length=3)
+    description = forms.CharField(label="Descripción",widget=forms.Textarea(attrs={"rows":5, "cols":20}))
+    price = forms.FloatField(required=True, min_value=0.1)
+    category = forms.ModelChoiceField(label="Categoría", queryset=Category.objects.all())
+
+class RegistrationForm(forms.ModelForm):
+    class Meta:
+        model = YourModelName
+        widgets = {
+            'username' : forms.TextInput(attrs = {'placeholder': 'Username'}),
+            'email'    : forms.TextInput(attrs = {'placeholder': 'E-Mail'}),
+        }
+
+zip_code = models.CharField(max_length=100)
+
+description = forms.CharField(label="Descripción",widget=forms.Textarea(attrs={"rows":5, "cols":20}))
+
+
+
+
+self.fields[''].queryset
+
+from django.views.
+
+generic.base import TemplateView
+
+class Home(TemplateView):
+    template_name = 'index.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Home. self).get_context_data(*args, **kwargs)
+        context['message'] = 'Hello World!'
+        return context
+
+<p>{{message}}</p>
+
+
+
+django.contrib.auth.models 
+
+en cart ver
+
+from django.shortcuts import render
+from django.views.generic.base import View
+
+class Home(View):
+    def get(self, request, *args, **kwargs):
+        context = {'message': 'Hello Django!'}
+        return render(request, "index.html", context=context)
+
+from django.views.generic import TemplateView
+
+
+class TemplateViewWithPost(TemplateView):
+    template_name = 'path-to-the-page.html'
+    
+    def get_context_data(self, **kwargs):
+        kwargs = super(TemplateViewWithPost, self).get_context_data(**kwargs)
+        # Your code here
+        kwargs['foo'] = "bar"
+        return kwargs
+
+    def post(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        # Your code here
+        # Here request.POST is the same as self.request.POST
+        # You can also access all possible self variables
+        # like changing the template name for instance
+        bar = self.request.POST.get('foo', None)
+        if bar: self.template_name = 'path-to-new-template.html'
+        previous_foo = context['foo']
+        context['new_variable'] = 'new_variable' + ' updated'
+        
+        return self.render_to_response(context)
+
+
+	50. Curso Django 2 | Funciones en Vistas Basadas en Clases
+
+ return HttpResponseRedirect(reverse('/<your url here>/', [params]))
+
+#index
+path('index/', index, name="index_page"),
+
+views.py
+
+def redirect_user(request):
+    return HttpResponseRedirect(reverse('index_page'))
+
+Si desea pasar datos entre vistas pero no desea ponerlos en la URL, debe usar la sesión.
+
+Editar
+
+Esto no tiene nada que ver con la autenticación. Es tan simple como poner un valor en la sesión en una vista y sacarlo en la otra. Así que:
+
+request.session['winner_id'] = my_winner_id
+y
+
+winner_id = request.session['winner_id']
+Share
+
